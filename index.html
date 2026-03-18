@@ -3,9 +3,217 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>подключение</title>
+    <title>РЕВАНШ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section class="first">
+      <div class="comic-section">
+        <div class="comic-box">
+          <div class="mask mask-1"></div>
+          <div class="mask mask-2"></div>
+          <img src="images/rooster.svg" alt="Петух" />
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+          <div class="line line-4"></div>
+          <div class="line line-5"></div>
+        </div>
+        <div class="window">
+          <p class="text">
+            ПОЧУВСТВУЙ СЕБЯ <span class="highlight"><br />ПЕТУХОМ!</span><br />
+            ТЕПЕРЬ ТЫ ОДИН ИЗ НАС
+          </p>
+          <img src="images/window.svg" alt="Окно" />
+        </div>
+
+        <div class="eye">
+          <img src="images/eye-open.svg" class="eye-open" />
+          <img src="images/eye-close.svg" class="eye-close" />
+        </div>
+      </div>
+    </section>
+    <section class="swiper-section">
+      <button class="done-button">ВЫБРАТЬ</button>
+
+      <div class="input-window" style="display: none">
+        <p class="name-title">ПРИДУМАЙТЕ ИМЯ</p>
+        <input id="nameInput" type="text" placeholder="Введите имя" />
+        <button class="submit-button">ГОТОВО</button>
+      </div>
+      <div class="triangles-bg">
+        <div class="bg-triangle-red"></div>
+        <div class="bg-triangle-black"></div>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/person1.svg" alt="Image 1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/person2.svg" alt="Image 2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/person3.svg" alt="Image 3" />
+          </div>
+        </div>
+      </div>
+      <button class="arrow left-arrow"></button>
+      <button class="arrow right-arrow"></button>
+
+      <div class="window-swiper">
+        <p class="text-swiper">
+          ПОСТАВЬ <span class="highlight-swiper"><br />СТАВКУ</span><br />
+        </p>
+        <img src="images/window-swiper.svg" alt="Окно" />
+      </div>
+    </section>
+    <section class="cards-section">
+      <div class="card card-left">
+        <div class="card1">
+          <img src="images/boom.svg" class="boom" />
+          <img src="images/hand1.svg" class="hand hand1" />
+          <img src="images/hand2.svg" class="hand hand2" />
+        </div>
+      </div>
+
+      <div class="card card-center">
+        <div class="card2">
+          <img src="images/bird1.svg" class="bird bird1" />
+          <img src="images/bird2.svg" class="bird bird2" />
+        </div>
+      </div>
+
+      <div class="card card-right">
+        <div class="card3">
+          <img src="images/boom3.svg" class="boom boom3" />
+          <img src="images/boom1.svg" class="boom boom1" />
+
+          <img src="images/hand3.svg" class="hand11 hand3" />
+          <img src="images/hand44.svg" class="hand11 hand4" />
+        </div>
+      </div>
+    </section>
+    <section class="fight-section">
+      <div class="fight-content">
+        <div class="fight-bg">
+          <img src="images/kulak.svg" class="fist" />
+          <img src="images/bam.svg" class="fight-boom" />
+          <img src="images/feather1.svg" class="feather feather1" />
+          <img src="images/feather2.svg" class="feather feather2" />
+          <img src="images/feather3.svg" class="feather feather3" />
+        </div>
+      </div>
+
+      <div class="window55">
+        <p class="text55">
+          ТВОЙ <span class="highlight"><br />ВЫИГРАЛ</span><br />
+        </p>
+        <img src="images/window3.svg" class="img55" alt="Окно" />
+      </div>
+
+      <div class="name-plate">
+        <span id="playerName">ИМЯ</span>
+      </div>
+    </section>
+
+    <section class="puzzle-section">
+      <div class="puzzle-bg">
+        <!-- Фоновое изображение кубка -->
+        <img src="images/cuboc.svg" class="cup-bg" />
+
+        <div class="puzzle-container">
+          <!-- Итоговый кубок (появляется после сборки) -->
+          <img src="images/cup.svg" class="cup-full" id="cupFull" />
+
+          <!-- Пазлы -->
+          <div class="puzzle-pieces">
+            <img
+              src="images/puzzle1.svg"
+              class="puzzle-piece"
+              data-target="target1"
+            />
+            <img
+              src="images/puzzle2.svg"
+              class="puzzle-piece"
+              data-target="target2"
+            />
+            <img
+              src="images/puzzle3.svg"
+              class="puzzle-piece"
+              data-target="target3"
+            />
+            <img
+              src="images/puzzle4.svg"
+              class="puzzle-piece"
+              data-target="target4"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="drawing-section">
+      <div class="shape">
+        <img src="images/cubor-draw.svg" class="cup-image" />
+        <img
+          src="images/feather-draw1.svg"
+          class="feather-draw feather-draw1"
+        />
+
+        <img
+          src="images/feather-draw2.svg"
+          class="feather-draw feather-draw2"
+        />
+        <img
+          src="images/feather-draw3.svg"
+          class="feather-draw feather-draw3"
+        />
+        <img
+          src="images/feather-draw4.svg"
+          class="feather-draw feather-draw4"
+        />
+
+        <canvas id="drawingCanvas"></canvas>
+      </div>
+      <div class="window66">
+        <p class="text66">
+          ОСТАВЬ СВОЙ <span class="highlight"><br />АВТОГРАФ</span><br />
+        </p>
+        <img src="images/window5.svg" class="img66" alt="Окно" />
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <div class="footer-shape">
+        <div class="footer-text">
+          <div class="text-line">
+            <span>Б</span><span>2</span><span>5</span><span>Д</span
+            ><span>З</span><span>1</span><span>0</span>
+          </div>
+          <div class="text-line">
+            <span>П</span><span>О</span><span>Т</span><span>А</span
+            ><span>В</span><span>А</span> <span class="word-gap"></span>
+            <span> </span><span> Е</span><span>Л</span><span>И</span
+            ><span>З</span><span>А</span><span>В</span><span>Е</span
+            ><span>Т</span><span>А</span>
+          </div>
+          <div class="text-line">
+            <span>К</span><span>А</span><span>М</span><span>И</span
+            ><span>Л</span><span>А</span> <span class="word-gap"></span
+            ><span> Р</span><span>И</span><span>Х</span><span>Т</span
+            ><span>Е</span><span>Р</span>
+          </div>
+        </div>
+        <img src="images/line.svg" class="line-footer" />
+      </div>
+    </section>
+  </body>
 </html>
