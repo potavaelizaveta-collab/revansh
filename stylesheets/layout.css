@@ -443,7 +443,6 @@ button {
   height: 60vw;
   display: flex;
   justify-content: center;
-  padding: 5vw;
 }
 
 .card {
@@ -759,108 +758,134 @@ button {
   animation: shake2 0.2s ease-in-out infinite alternate;
 }
 
-.puzzle-section {
-  width: 100%;
-  height: 60vw;
+.puzzle {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-}
-
-.puzzle-bg {
-  position: relative;
   width: 90vw;
-  height: 55vw;
+  height: 50vw;
+  background-position: -15vw -2vw;
   background: #d1293c;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 94%, 0% 100%);
-  z-index: 1;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 93.8%, 0% 100%);
+  background-image: url(../images/bg-cup.svg);
+  background-size: 90vw;
+  background-repeat: no-repeat;
+  background-position: 1vw 1vw;
 }
 
-.cup-bg {
+.bg-puzzele {
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  opacity: 0.2;
+  background: #d1293c;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 93.8%, 0% 100%);
   z-index: 1;
 }
 
-.puzzle-container {
+.rooster {
   position: absolute;
-  width: 80vw;
-  height: 45vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
 }
 
-.target-zone {
-  position: absolute;
-  width: 12vw;
-  height: 12vw;
-  opacity: 0;
-  z-index: 2;
+.rooster1 {
+  top: -1.2vw;
+  left: 60vw;
+  width: 48vw;
+  height: 68vw;
 }
 
-#target1 {
-  left: 30vw;
-  top: 10vw;
-}
-
-#target2 {
-  left: 45vw;
-  top: 10vw;
-}
-
-#target3 {
-  left: 30vw;
-  top: 25vw;
-}
-
-#target4 {
-  left: 45vw;
-  top: 25vw;
+.rooster2 {
+  top: -1.2vw;
+  left: -18vw;
+  width: 48vw;
+  height: 68vw;
 }
 
 .puzzle-piece {
   position: absolute;
-  width: 12vw;
+  width: 13vw;
   cursor: grab;
-  z-index: 3;
 }
 
-.puzzle-piece:nth-of-type(1) {
-  left: 5vw;
+.piece1 {
+  left: 10vw;
   top: 5vw;
-}
-
-.puzzle-piece:nth-of-type(2) {
-  left: 5vw;
-  top: 20vw;
-}
-
-.puzzle-piece:nth-of-type(3) {
-  right: 5vw;
-  top: 5vw;
-}
-
-.puzzle-piece:nth-of-type(4) {
-  right: 5vw;
-  top: 20vw;
-}
-
-.cup-full {
-  position: absolute;
   width: 25vw;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  z-index: 4;
-  transition: opacity 0.5s ease;
+}
+.piece2 {
+  left: 58vw;
+  top: 1vw;
+}
+.piece3 {
+  right: 60vw;
+  top: 18vw;
+}
+.piece4 {
+  right: 20vw;
+  top: 18vw;
+}
+
+.drop-zone {
+  position: absolute;
+}
+
+.drop1 {
+  left: 33vw;
+  top: 3vw;
+  width: 25vw;
+  height: 20vw;
+}
+.drop2 {
+  left: 44vw;
+  top: 3vw;
+  width: 15vw;
+  height: 22vw;
+}
+.drop3 {
+  left: 34.4vw;
+  top: 15vw;
+  width: 15vw;
+  height: 30vw;
+}
+.drop4 {
+  left: 40.8vw;
+  top: 17vw;
+  width: 15vw;
+  height: 28vw;
+}
+
+.drop-zone.drop1.image {
+  background-image: url(../images/puzzle1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.drop-zone.drop2.image {
+  background-image: url(../images/puzzle2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.drop-zone.drop3.image {
+  background-image: url(../images/puzzle3.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.drop-zone.drop4.image {
+  background-image: url(../images/puzzle4.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cup-final {
+  position: absolute;
+  top: 3vw;
+  width: 27vw;
+  height: 45vw;
+  left: 33vw;
+  display: none;
 }
 
 .drawing-section {
@@ -961,13 +986,13 @@ button {
   padding: 0;
   animation: shake6 0.2s ease-in-out infinite alternate;
   position: absolute;
-  top: 15.2vw;
+  top: 15.1vw;
   left: 14vw;
 }
 
 .img66 {
   position: absolute;
-  top: 8.5vw;
+  top: 8.1vw;
   left: 10vw;
   height: 25vw;
   width: 38vw;
@@ -1086,4 +1111,36 @@ button {
 .word-gap {
   display: inline-block;
   width: 2vw;
+}
+
+.window77 {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.text77 {
+  z-index: 12;
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 2.3vw;
+  font-weight: 820;
+  color: rgb(0, 0, 0);
+  line-height: 0.9;
+  margin: 0;
+  padding: 0;
+  animation: shake6 0.2s ease-in-out infinite alternate;
+  position: absolute;
+  top: -12vw;
+  left: -1vw;
+  white-space: nowrap;
+}
+
+.img77 {
+  position: absolute;
+  top: -17vw;
+  left: -5vw;
+  height: 25vw;
+  width: 38vw;
+  animation: shake2 0.2s ease-in-out infinite alternate;
 }

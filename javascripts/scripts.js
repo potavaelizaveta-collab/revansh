@@ -47,6 +47,46 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 
+function dragAndDropPuzzles() {
+  const pieces = document.querySelectorAll('.puzzle-piece')
+  const drops = document.querySelectorAll('.drop-zone')
+  const cup = document.querySelector('.cup-final')
+  let cnt = 0
+
+  pieces.forEach((piece) => {
+    piece.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', event.target.classList[1])
+    })
+  })
+
+  drops.forEach((container) => {
+    container.addEventListener('dragover', (event) => {
+      event.preventDefault()
+    })
+
+    container.addEventListener('drop', (event) => {
+      event.preventDefault()
+
+      const pieceClass = event.dataTransfer.getData('text/plain')
+      const dropClass = pieceClass.replace('piece', 'drop')
+
+      const drop = document.querySelector(`.${dropClass}`)
+      const drag = document.querySelector(`.${pieceClass}`)
+      if (container === drop) {
+        drop.classList.add('image')
+        drag.style.display = 'none'
+        cnt++
+
+        if (cnt === 4) {
+          cup.style.display = 'block'
+        }
+      }
+    })
+  })
+}
+
+dragAndDropPuzzles()
+
 const canvas = document.getElementById('drawingCanvas')
 const ctx = canvas.getContext('2d')
 let isDrawing = false
