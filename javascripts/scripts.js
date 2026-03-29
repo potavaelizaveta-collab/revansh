@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
     swiperWrapper.style.transform = `translateX(-${currentIndex * 100}%)`
   }
 
-  leftArrow.addEventListener('click', function () {
+  leftArrow.addEventListener('click', () => {
     if (currentIndex > 0) {
       currentIndex--
       updateSwiper()
     }
   })
 
-  rightArrow.addEventListener('click', function () {
+  rightArrow.addEventListener('click', () => {
     if (currentIndex < slides.length - 1) {
       currentIndex++
       updateSwiper()
@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const doneButton = document.querySelector('.done-button')
   const inputWindow = document.querySelector('.input-window')
-
-  doneButton.addEventListener('click', function () {
-    inputWindow.style.display = 'flex'
-  })
-
   const submitButton = document.querySelector('.submit-button')
   const nameInput = document.querySelector('#nameInput')
   const playerNamePlate = document.querySelector('#playerName')
 
-  submitButton.addEventListener('click', function (event) {
+  doneButton.addEventListener('click', () => {
+    inputWindow.style.display = 'flex'
+  })
+
+  submitButton.addEventListener('click', (event) => {
     event.preventDefault()
+
     const playerName = nameInput.value.trim()
 
     if (playerName !== '') {
@@ -45,105 +45,121 @@ document.addEventListener('DOMContentLoaded', function () {
 
     inputWindow.style.display = 'none'
   })
-})
 
-function dragAndDropPuzzles() {
   const pieces = document.querySelectorAll('.puzzle-piece')
   const drops = document.querySelectorAll('.drop-zone')
   const cup = document.querySelector('.cup-final')
-  let cnt = 0
+
+  let placed = 0
 
   pieces.forEach((piece) => {
     piece.addEventListener('dragstart', (event) => {
-      event.dataTransfer.setData('text/plain', event.target.classList[1])
+      event.dataTransfer.setData('text/plain', piece.classList[1])
     })
   })
 
-  drops.forEach((container) => {
-    container.addEventListener('dragover', (event) => {
+  drops.forEach((drop) => {
+    drop.addEventListener('dragover', (event) => {
       event.preventDefault()
     })
 
-    container.addEventListener('drop', (event) => {
+    drop.addEventListener('drop', (event) => {
       event.preventDefault()
 
       const pieceClass = event.dataTransfer.getData('text/plain')
-      const dropClass = pieceClass.replace('piece', 'drop')
+      const piece = document.querySelector(`.${pieceClass}`)
 
-      const drop = document.querySelector(`.${dropClass}`)
-      const drag = document.querySelector(`.${pieceClass}`)
-      if (container === drop) {
-        drop.classList.add('image')
-        drag.style.display = 'none'
-        cnt++
+      const correctDropClass = pieceClass.replace('piece', 'drop')
 
-        if (cnt === 4) {
+      if (drop.classList.contains(correctDropClass)) {
+        // вставляем пазл внутрь слота
+        drop.appendChild(piece)
+
+        // растягиваем внутри слота
+        piece.style.position = 'absolute'
+        piece.style.left = '0'
+        piece.style.top = '0'
+        piece.style.width = '100%'
+        piece.style.height = '100%'
+
+        piece.draggable = false
+
+        placed++
+
+        if (placed === 4) {
           cup.style.display = 'block'
         }
       }
     })
   })
-}
 
-dragAndDropPuzzles()
+  const canvas = document.getElementById('drawingCanvas')
+  const ctx = canvas.getContext('2d')
 
-const canvas = document.getElementById('drawingCanvas')
-const ctx = canvas.getContext('2d')
-let isDrawing = false
-let lastX = 0
-let lastY = 0
+  let isDrawing = false
+  let lastX = 0
+  let lastY = 0
 
-function resizeCanvas() {
-  const rect = canvas.getBoundingClientRect()
-  canvas.width = rect.width
-  canvas.height = rect.height
-}
-
-function getAdjustedCoordinates(e, canvas) {
-  const rect = canvas.getBoundingClientRect()
-  const angle = (32 * Math.PI) / 180
-
-  const centerX = rect.left + rect.width / 2
-  const centerY = rect.top + rect.height / 2
-
-  const mouseX = e.clientX - centerX
-  const mouseY = e.clientY - centerY
-
-  const cos = Math.cos(-angle)
-  const sin = Math.sin(-angle)
-  const adjustedX = mouseX * cos - mouseY * sin
-  const adjustedY = mouseX * sin + mouseY * cos
-
-  return {
-    x: adjustedX + rect.width / 2,
-    y: adjustedY + rect.height / 2
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect()
+    canvas.width = rect.width
+    canvas.height = rect.height
   }
-}
 
-canvas.addEventListener('mousedown', (e) => {
-  isDrawing = true
-  const { x, y } = getAdjustedCoordinates(e, canvas)
-  lastX = x
-  lastY = y
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect()
+
+    if (e.touches) {
+      return {
+        x: e.touches[0].clientX - rect.left,
+        y: e.touches[0].clientY - rect.top
+      }
+    } else {
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      }
+    }
+  }
+
+  function startDraw(e) {
+    isDrawing = true
+    const pos = getPos(e)
+    lastX = pos.x
+    lastY = pos.y
+  }
+
+  function draw(e) {
+    if (!isDrawing) return
+
+    const pos = getPos(e)
+
+    ctx.beginPath()
+    ctx.moveTo(lastX, lastY)
+    ctx.lineTo(pos.x, pos.y)
+    ctx.strokeStyle = 'black'
+    ctx.lineWidth = 3
+    ctx.stroke()
+
+    lastX = pos.x
+    lastY = pos.y
+  }
+
+  function stopDraw() {
+    isDrawing = false
+  }
+
+  // мышь
+  canvas.addEventListener('mousedown', startDraw)
+  canvas.addEventListener('mousemove', draw)
+  canvas.addEventListener('mouseup', stopDraw)
+  canvas.addEventListener('mouseleave', stopDraw)
+
+  // телефон 🔥
+  canvas.addEventListener('touchstart', startDraw)
+  canvas.addEventListener('touchmove', draw)
+  canvas.addEventListener('touchend', stopDraw)
+
+  window.addEventListener('load', resizeCanvas)
+  window.addEventListener('resize', resizeCanvas)
 })
-
-canvas.addEventListener('mousemove', (e) => {
-  if (!isDrawing) return
-  const { x, y } = getAdjustedCoordinates(e, canvas)
-
-  ctx.beginPath()
-  ctx.moveTo(lastX, lastY)
-  ctx.lineTo(x, y)
-  ctx.strokeStyle = 'black'
-  ctx.lineWidth = 3
-  ctx.stroke()
-
-  lastX = x
-  lastY = y
-})
-
-canvas.addEventListener('mouseup', () => (isDrawing = false))
-canvas.addEventListener('mouseleave', () => (isDrawing = false))
-
-window.addEventListener('load', resizeCanvas)
-window.addEventListener('resize', resizeCanvas)

@@ -1,0 +1,548 @@
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+    height: auto;
+  }
+
+  .comic-section {
+    height: 125vw;
+  }
+
+  .comic-box {
+    height: 70vw;
+  }
+
+  .comic-box img[alt='Петух'] {
+    content: url('../images/new-rooster-mobil.svg');
+    width: 70vw;
+    height: 130vw;
+    top: -9vw;
+    left: -4vw;
+    opacity: 0;
+    z-index: 2;
+    transform: translate(-20vw, 10vw);
+    animation: roosterAppear 1s ease-out forwards;
+  }
+
+  .line-1 {
+    width: 82%;
+    height: 3.5vw;
+    top: 101vw;
+  }
+
+  .line-2 {
+    width: 81%;
+    height: 3.5vw;
+    bottom: -3%;
+    top: 91.5vw;
+  }
+
+  .line-3 {
+    width: 3.5vw;
+    height: 30%;
+    bottom: 19vw;
+    right: 2vw;
+    transform: rotate(48deg);
+  }
+
+  .line-4 {
+    width: 3.5vw;
+    height: 30%;
+    bottom: 9vw;
+    right: 2vw;
+    transform: rotate(48deg);
+  }
+
+  .line-5 {
+    width: 3.5vw;
+    height: 50%;
+    bottom: 20%;
+    right: 15vw;
+    top: 75vw;
+    transform: rotate(0deg);
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+  }
+
+  .mask-1 {
+    width: 11vw;
+    height: 140vw;
+    top: -5vw;
+    left: -10vw;
+  }
+
+  .eye img {
+    position: absolute;
+    width: 120%;
+    left: -23vw;
+    top: 20vw;
+  }
+
+  .bg-triangle-red {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 81.5vw solid transparent;
+    border-left: 88vw solid #d1293c;
+    right: 6vw;
+    top: 10vw;
+  }
+
+  .bg-triangle-black {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 81.5vw solid transparent;
+    border-right: 88vw solid black;
+    left: 6vw;
+    top: 11.5vw;
+  }
+  .text-swiper {
+    z-index: 12;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 820;
+    color: rgb(0, 0, 0);
+    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    animation: shake1 0.2s ease-in-out infinite alternate;
+    position: absolute;
+    top: -48vw;
+    left: -43vw;
+  }
+
+  .window-swiper img {
+    position: absolute;
+    top: -63vw;
+    left: -50vw;
+    width: 38vw;
+    height: 45vw;
+    animation: shake 0.2s ease-in-out infinite alternate;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    height: 105vw;
+    transition: transform 0.5s ease;
+  }
+
+  /* Карточки */
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 6vw;
+    width: 100%;
+    height: auto;
+  }
+
+  .card {
+    width: 90vw;
+    height: 60vw;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    transform: none !important;
+    margin: 0 auto;
+  }
+
+  .hand4 {
+    top: 19vw;
+    right: 15vw;
+  }
+
+  .hand3 {
+    top: 2vw;
+    left: 20vw;
+  }
+  .hand11 {
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    animation: shakeHandXY 1s ease-in-out infinite alternate;
+  }
+
+  .comic-box,
+  .swiper-container,
+  .puzzle,
+  .shape {
+    width: 90vw !important;
+    height: auto !important;
+  }
+
+  .hand2 {
+    top: 25vw;
+    right: 29vw;
+  }
+
+  .hand1 {
+    top: -28vw;
+    left: 30vw;
+  }
+
+  .bird1 {
+    opacity: 1;
+    top: -20vw;
+    left: -13.5vw;
+    width: 80vw;
+    height: 130vw;
+  }
+
+  .card-center:hover .bird2 {
+    opacity: 1;
+    top: -20vw;
+    left: 30vw;
+  }
+  .bird2 {
+    opacity: 0;
+    width: 80vw;
+    height: 130vw;
+  }
+
+  /* Кнопки */
+  .done-button,
+  .submit-button {
+    font-size: 3vw !important;
+    padding: 2vw 6vw !important;
+  }
+
+  .done-button {
+    position: absolute;
+    top: 95vw;
+    left: 37vw;
+  }
+
+  .fight-section {
+    width: 100%;
+    height: 60vw;
+    margin-top: 9vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .fight-bg {
+    width: 90vw;
+    height: 60vw;
+    background: black;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .fist {
+    position: absolute;
+    width: 60vw;
+    height: auto;
+    top: 5vw;
+    left: -1vw;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .fight-boom {
+    position: absolute;
+    width: 50vw;
+    height: auto;
+    top: 27vw;
+    left: 41vw;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
+
+  /* Перья */
+  .feather {
+    position: absolute;
+    z-index: 4;
+  }
+
+  .feather1 {
+    width: 10vw;
+    top: 5vw;
+    left: 70vw;
+  }
+
+  .feather2 {
+    width: 5vw;
+    top: 15vw;
+    left: 60vw;
+  }
+
+  .feather3 {
+    width: 10vw;
+    top: 20vw;
+    left: 45vw;
+  }
+
+  .img55 {
+    position: absolute;
+    top: 43vw;
+    left: 3vw;
+    height: 25vw;
+    width: 38vw;
+    animation: shake2 0.2s ease-in-out infinite alternate;
+  }
+
+  .text55 {
+    z-index: 12;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 820;
+    color: rgb(0, 0, 0);
+    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    animation: shake1 0.2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 48vw;
+    left: 8vw;
+  }
+
+  .name-plate {
+    position: absolute;
+    z-index: 27;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 820;
+    color: rgb(0, 0, 0);
+    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    animation: shake1 0.2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 56.6vw;
+    left: 70vw;
+  }
+
+  .window55 {
+    position: absolute;
+    z-index: 10;
+    top: 5vw;
+    right: 5vw;
+    width: 40vw;
+    height: auto;
+  }
+
+  .puzzele-main {
+    width: 90vw;
+    height: 90vw;
+    margin-top: 10vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    background: #d1293c;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    background-image: url(../images/bg-cup.svg);
+    background-size: 140vw;
+    background-repeat: no-repeat;
+    background-position: -23vw 10vw;
+  }
+
+  .rooster {
+    display: none !important;
+  }
+
+  .puzzle {
+    width: 95vw;
+    height: 80vw;
+    background: #d1293c;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    position: relative;
+    overflow: visible;
+  }
+
+  .puzzle-piece {
+    height: auto !important;
+    cursor: grab;
+    width: 23vw;
+  }
+
+  .piece1 {
+    left: 10vw;
+    top: -43vw;
+    width: 41vw;
+  }
+
+  .piece2 {
+    left: 58vw;
+    top: -38vw;
+  }
+
+  .piece3 {
+    right: 60vw;
+    top: -10vw;
+  }
+
+  /* Зоны для пазлов */
+  .drop-zone {
+    position: absolute;
+  }
+
+  .drop4 {
+    left: 42.8vw;
+    top: -7vw;
+    width: 20vw;
+    height: 43vw;
+  }
+  .drop3 {
+    left: 30.4vw;
+    top: -13vw;
+    width: 22vw;
+    height: 49vw;
+  }
+  .drop2 {
+    left: 45vw;
+    top: -31vw;
+    width: 23vw;
+    height: 30vw;
+  }
+  .drop1 {
+    left: 27vw;
+    top: -30vw;
+    width: 41vw;
+    height: 29vw;
+  }
+
+  .piece4 {
+    width: 20vw;
+    right: 28vw;
+    top: -7vw;
+  }
+
+  .cup-final {
+    position: absolute;
+    top: -33vw;
+    width: 50vw;
+    height: 68vw;
+    left: 23vw;
+    display: none;
+  }
+
+  .text77 {
+    z-index: 12;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 820;
+    color: rgb(0, 0, 0);
+    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    animation: shake6 0.2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 32vw;
+    left: 13vw;
+    white-space: nowrap;
+  }
+  .img77 {
+    position: absolute;
+    top: 27vw;
+    left: 8vw;
+    height: 25vw;
+    width: 38vw;
+    animation: shake2 0.2s ease-in-out infinite alternate;
+  }
+
+  .drawing-section {
+    width: 100% !important;
+    height: 100vw !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: white !important;
+    clip-path: none !important;
+    border-radius: 0 !important;
+  }
+
+  .shape {
+    width: 90vw !important;
+    height: 90vw !important;
+    background: black !important;
+    clip-path: none !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  #drawingCanvas {
+    width: 55vw !important;
+    height: 25vw !important;
+    background: white !important;
+    border: 2vw solid #333232 !important;
+    position: relative !important;
+    z-index: 4 !important;
+    left: 1vw;
+    top: 12vw;
+  }
+
+  .feather-draw,
+  .cup-image {
+    position: absolute !important;
+    z-index: 3 !important;
+  }
+
+  .feather-draw1 {
+    display: none !important;
+  }
+
+  .feather-draw2 {
+    display: none !important;
+  }
+
+  .feather-draw4 {
+    height: 60vw;
+    width: 20vw;
+    left: 5vw;
+    top: 45vw;
+  }
+
+  .feather-draw3 {
+    height: 30vw;
+    width: 14vw;
+    left: 15vw;
+    top: -1vw;
+  }
+
+  .cup-image {
+    top: -95vw !important;
+    left: 80vw !important;
+    transform: translateX(-50%) !important;
+    width: 170vw !important;
+    height: auto !important;
+  }
+
+  .text66 {
+    z-index: 12;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 2.3vw;
+    font-weight: 820;
+    color: rgb(0, 0, 0);
+    line-height: 0.9;
+    margin: 0;
+    padding: 0;
+    animation: shake6 0.2s ease-in-out infinite alternate;
+    position: absolute;
+    top: 34vw;
+    left: 14vw;
+  }
+
+  .img66 {
+    position: absolute;
+    top: 27vw;
+    left: 10vw;
+    height: 25vw;
+    width: 38vw;
+    animation: shake2 0.2s ease-in-out infinite alternate;
+  }
+}
