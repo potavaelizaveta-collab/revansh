@@ -6,6 +6,7 @@
 
   .comic-section {
     height: 125vw;
+    margin: 0 0 0 2.3vw;
   }
 
   .comic-box {
@@ -39,17 +40,17 @@
 
   .line-3 {
     width: 3.5vw;
-    height: 30%;
-    bottom: 19vw;
-    right: 2vw;
+    height: 23%;
+    bottom: 21vw;
+    right: 5vw;
     transform: rotate(48deg);
   }
 
   .line-4 {
     width: 3.5vw;
-    height: 30%;
-    bottom: 9vw;
-    right: 2vw;
+    height: 23%;
+    bottom: 13vw;
+    right: 4vw;
     transform: rotate(48deg);
   }
 
