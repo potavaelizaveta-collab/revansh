@@ -149,13 +149,11 @@ document.addEventListener('DOMContentLoaded', function () {
     isDrawing = false
   }
 
-  // мышь
   canvas.addEventListener('mousedown', startDraw)
   canvas.addEventListener('mousemove', draw)
   canvas.addEventListener('mouseup', stopDraw)
   canvas.addEventListener('mouseleave', stopDraw)
 
-  // телефон 🔥
   canvas.addEventListener('touchstart', startDraw)
   canvas.addEventListener('touchmove', draw)
   canvas.addEventListener('touchend', stopDraw)
