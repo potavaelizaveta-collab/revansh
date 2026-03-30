@@ -206,45 +206,12 @@ body {
   top: 5vw;
 }
 
-@keyframes showEye {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .eye-open {
   animation: eyeOpen 1.5s infinite;
 }
 
 .eye-close {
   animation: eyeClose 1.5s infinite;
-}
-
-@keyframes eyeOpen {
-  0%,
-  90%,
-  100% {
-    opacity: 1;
-  }
-  92%,
-  98% {
-    opacity: 0;
-  }
-}
-
-@keyframes eyeClose {
-  0%,
-  90%,
-  100% {
-    opacity: 0;
-  }
-  92%,
-  98% {
-    opacity: 1;
-  }
 }
 
 .swiper-section {
@@ -500,24 +467,6 @@ button {
   right: 10vw;
 }
 
-@keyframes rotateBoom {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shakeHand {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(5vw, 3vw);
-  }
-}
-
 .bird {
   position: absolute;
   transition: opacity 0.5s ease;
@@ -578,24 +527,6 @@ button {
   right: 2vw;
 }
 
-@keyframes rotateBoom {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shakeHandXY {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(50px, 30px);
-  }
-}
-
 .fight-section {
   width: 100%;
   height: 60vw;
@@ -642,18 +573,6 @@ button {
   animation: fistPunch 2s infinite ease-in-out;
 }
 
-@keyframes fistPunch {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(20vw);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 .fight-boom {
   position: absolute;
   left: 35vw;
@@ -661,15 +580,6 @@ button {
   width: 58vw;
   height: 41vw;
   animation: boomRotate 1.5s infinite alternate;
-}
-
-@keyframes boomRotate {
-  from {
-    transform: rotate(-2deg);
-  }
-  to {
-    transform: rotate(3deg);
-  }
 }
 
 .feather {
@@ -700,15 +610,6 @@ button {
   top: 14vw;
   animation-delay: 0.6s;
   z-index: 10;
-}
-
-@keyframes featherMove {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-3vw);
-  }
 }
 
 .name-plate {
@@ -938,15 +839,15 @@ button {
 .feather-draw1 {
   height: 40vw;
   width: 15vw;
-  left: 70vw;
-  top: 8vw;
+  left: 67vw;
+  top: 2vw;
 }
 
 .feather-draw2 {
   height: 20vw;
   width: 11vw;
-  left: 65vw;
-  top: 10vw;
+  left: 70vw;
+  top: 24vw;
   animation-delay: 0.3s;
 }
 
@@ -1053,42 +954,6 @@ button {
   height: 40vw;
   top: 0;
   left: 2vw;
-}
-
-@keyframes shakeLetter {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(0px, 1px) rotate(2deg);
-  }
-  20% {
-    transform: translate(-2px, -2px) rotate(1deg);
-  }
-  30% {
-    transform: translate(1px, -3px) rotate(-2deg);
-  }
-  40% {
-    transform: translate(2px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(3px, 0px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(0px, 2px) rotate(-3deg);
-  }
-  70% {
-    transform: translate(-3px, -2px) rotate(1deg);
-  }
-  80% {
-    transform: translate(-2px, 3px) rotate(3deg);
-  }
-  90% {
-    transform: translate(-1px, -1px) rotate(2deg);
-  }
-  100% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
 }
 
 .text-line span {
